@@ -6,7 +6,6 @@ const char last_capital = 'Z';
 const char first_small = 'a';
 const char last_small = 'z';
 
-
 bool is_letter(char symbol) {
 
     if ((symbol >= first_capital && symbol <= last_capital) || (symbol >= first_small && symbol <= last_small)) {
