@@ -1,5 +1,4 @@
 #include <iostream>
-#define SDL_MAIN_HANDLED
 #include <SDL.h>
 
 #define SCREEN_WIDTH 640
@@ -9,8 +8,7 @@ class MainGame {
 
 public:
     int init() {
-        SDL_SetMainReady();
-        int initResult = SDL_Init(SDL_INIT_VIDEO);
+       int initResult = SDL_Init(SDL_INIT_VIDEO);
 
         if (initResult < 0) {
             std::cout << "could not initialize sdl2: " << SDL_GetError() << '\n';
@@ -63,9 +61,9 @@ private:
 };
 
 
-int main() {
+int main(int argc, char* args[]) {
     MainGame window;
-    if (window.init()) {
+    if (window.init() == 0) {
         window.run_loop();
         window.close();
     }
