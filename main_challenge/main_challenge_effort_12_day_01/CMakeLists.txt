@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.29)
+project(Hello)
+
+add_subdirectory(lib)
+
+add_executable(main main.cpp)
+target_link_libraries(main lib)
