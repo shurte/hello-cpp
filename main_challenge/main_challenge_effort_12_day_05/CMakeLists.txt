@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 4.0)
+project(Hello VERSION 1.0.0)
+file(GLOB SOURCE "*.cpp")
+include_directories(.)
+add_executable(main ${SOURCE})
