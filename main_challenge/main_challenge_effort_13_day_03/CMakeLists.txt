@@ -29,5 +29,5 @@ add_custom_command(
 
 add_custom_command(
     TARGET main POST_BUILD 
-    COMMAND ${CMAKE_COMMAND} -E copy "${CMAKE_BINARY_DIR}/_deps/glew-cmake-build/bin/libglew-shared.dll" "${CMAKE_BINARY_DIR}/libglew-shared.dll"
+    COMMAND ${CMAKE_COMMAND} -E copy "${glew_BINARY_DIR}/bin/libglew-shared.dll" "${CMAKE_BINARY_DIR}/libglew-shared.dll"
     COMMENT "Copy libglew-shared.dll")
