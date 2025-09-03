@@ -18,9 +18,18 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(SDL2)
 
+FetchContent_Declare(
+    glew
+    GIT_REPOSITORY https://github.com/Perlmint/glew-cmake
+    GIT_TAG origin/master
+)
+FetchContent_MakeAvailable(glew)
+
 add_executable(main main.cpp)
 target_include_directories(main PUBLIC ${CMAKE_SOURCE_DIR})
 target_link_libraries(main SDL2)
+target_link_libraries(main libglew_shared)
+target_link_libraries(main opengl32)
 
 add_executable(test test.cpp)
 target_include_directories(test PUBLIC ${CMAKE_SOURCE_DIR})
@@ -29,4 +38,9 @@ target_link_libraries(test Catch2WithMain)
 add_custom_command(
     TARGET main POST_BUILD
     COMMAND ${CMAKE_COMMAND} -E copy "${SDL2_BINARY_DIR}/SDL2.dll" "${CMAKE_BINARY_DIR}/SDL2.dll"
+)
+
+add_custom_command(
+    TARGET main POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy "${glew_BINARY_DIR}/bin/libglew-shared.dll" "${CMAKE_BINARY_DIR}/libglew-shared.dll"
 )
