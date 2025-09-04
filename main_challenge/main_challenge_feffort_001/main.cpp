@@ -20,8 +20,16 @@ int main() {
     );
 
     SDL_GLContext context = SDL_GL_CreateContext(window);
-
     glewInit();
+    SDL_GL_MakeCurrent(window, context);
+
+    GLuint VBO[1];
+    GLuint VAO[1];
+
+    glGenVertexArrays(1, VAO);
+    glGenBuffers(1, VBO);
+
+    glBindVertexArray(VAO[0]);
 
     SDL_Event event;
     bool isRunning = true;
