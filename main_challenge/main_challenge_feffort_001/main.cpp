@@ -30,6 +30,19 @@ int main() {
     glGenBuffers(1, VBO);
 
     glBindVertexArray(VAO[0]);
+    glBindBuffer(GL_ARRAY_BUFFER, VBO[0]);
+
+    GLfloat rectangle[] = {
+        -1.0f, -0.5f, 0.0f,
+        1.0f, -0.5f, 0.0f,
+        1.0f, 0.5f, 0.0f,
+        -1.0f, 0.5f, 0.0f
+    };
+
+    glBufferData(GL_ARRAY_BUFFER, sizeof(rectangle), rectangle, GL_STATIC_DRAW);
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(GLfloat), (GLvoid*)0);
+    glEnableVertexAttribArray(0);
+    glBindVertexArray(0);
 
     SDL_Event event;
     bool isRunning = true;
@@ -42,6 +55,15 @@ int main() {
                     break;
             }
         }
+
+        glClearColor(0.0f, 0.6f, 0.6f, 1.0f);
+        glClear(GL_COLOR_BUFFER_BIT);
+
+        glBindVertexArray(VAO[0]);
+        glDrawArrays(GL_POLYGON, 0, 4);
+        glBindVertexArray(0);
+
+        SDL_GL_SwapWindow(window);
     }
 
     SDL_DestroyWindow(window);
