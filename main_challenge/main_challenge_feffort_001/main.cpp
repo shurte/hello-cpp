@@ -5,6 +5,17 @@
 
 #include <GL/glew.h>
 
+#include <thread>
+
+void draw(GLuint vertex) {
+    glClearColor(0.0f, 0.6f, 0.6f, 1.0f);
+    glClear(GL_COLOR_BUFFER_BIT);
+
+    glBindVertexArray(vertex);
+    glDrawArrays(GL_POLYGON, 0, 4);
+    glBindVertexArray(0);
+}
+
 int main() {
     Hello hello;
 
@@ -33,10 +44,10 @@ int main() {
     glBindBuffer(GL_ARRAY_BUFFER, VBO[0]);
 
     GLfloat rectangle[] = {
-        -1.0f, -0.5f, 0.0f,
-        1.0f, -0.5f, 0.0f,
-        1.0f, 0.5f, 0.0f,
-        -1.0f, 0.5f, 0.0f
+        -0.67f, -0.67f, 0.0f,
+        0.67f, -0.67f, 0.0f,
+        0.67f, 0.67f, 0.0f,
+        -0.67f, 0.67f, 0.0f
     };
 
     glBufferData(GL_ARRAY_BUFFER, sizeof(rectangle), rectangle, GL_STATIC_DRAW);
@@ -56,12 +67,7 @@ int main() {
             }
         }
 
-        glClearColor(0.0f, 0.6f, 0.6f, 1.0f);
-        glClear(GL_COLOR_BUFFER_BIT);
-
-        glBindVertexArray(VAO[0]);
-        glDrawArrays(GL_POLYGON, 0, 4);
-        glBindVertexArray(0);
+        draw(VAO[0]);
 
         SDL_GL_SwapWindow(window);
     }
