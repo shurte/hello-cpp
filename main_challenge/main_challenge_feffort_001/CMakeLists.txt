@@ -25,13 +25,13 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(glew)
 
-add_executable(main main.cpp)
+add_executable(main main.cpp hello.cpp)
 target_include_directories(main PUBLIC ${CMAKE_SOURCE_DIR})
 target_link_libraries(main SDL2)
 target_link_libraries(main libglew_shared)
 target_link_libraries(main opengl32)
 
-add_executable(test test.cpp)
+add_executable(test test.cpp hello.cpp)
 target_include_directories(test PUBLIC ${CMAKE_SOURCE_DIR})
 target_link_libraries(test Catch2WithMain)
 
