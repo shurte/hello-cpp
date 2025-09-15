@@ -19,6 +19,8 @@ void draw(GLuint vertex) {
 int main() {
     Hello hello;
 
+    int i;
+
     SDL_Init(SDL_INIT_EVERYTHING);
 
     SDL_Window* window = SDL_CreateWindow(
