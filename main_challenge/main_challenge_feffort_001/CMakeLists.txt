@@ -1,6 +1,11 @@
 cmake_minimum_required(VERSION 4.0)
 project(Hello)
 
+set(CMAKE_CXX_STANDARD 17)
+set(WARNINGS -Wall -Wextra -Wpedantic)
+message(CMAKE_SOURCE_DIR="${CMAKE_SOURCE_DIR}")
+message(CMAKE_CXX_COMPILER_ID="${CMAKE_CXX_COMPILER_ID}")
+
 include(FetchContent)
 
 FetchContent_Declare(
@@ -30,6 +35,7 @@ target_include_directories(main PUBLIC ${CMAKE_SOURCE_DIR})
 target_link_libraries(main SDL2)
 target_link_libraries(main libglew_shared)
 target_link_libraries(main opengl32)
+target_compile_options(main PRIVATE "${WARNINGS}")
 
 add_executable(test test.cpp hello.cpp)
 target_include_directories(test PUBLIC ${CMAKE_SOURCE_DIR})
