@@ -8,6 +8,10 @@
 int main() {
     Hello hello;
 
+    hello.message(SDL_MAJOR_VERSION);
+    hello.message(SDL_MINOR_VERSION);
+    hello.message(SDL_PATCHLEVEL);
+
     SDL_Init(SDL_INIT_EVERYTHING);
 
     SDL_Window* window = SDL_CreateWindow(

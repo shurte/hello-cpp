@@ -6,4 +6,5 @@ class Hello {
         ~Hello();
 
         void action();
+        void message(int number);
 };
