@@ -30,3 +30,7 @@ void Hello::action() {
     std::thread actionThread(print, "action");
     actionThread.join();
 }
+
+void Hello::message(int number) {
+    std::cout << number << '\n';
+}
