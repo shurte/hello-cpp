@@ -1,21 +1,12 @@
 cmake_minimum_required(VERSION 4.0)
 project(Hello)
 
-include(FetchContent)
+set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake")
 
-FetchContent_Declare(
-    SDL2
-    GIT_REPOSITORY https://github.com/libsdl-org/SDL
-    GIT_TAG release-2.32.8
-)
-FetchContent_MakeAvailable(SDL2)
+include(CPM)
 
-FetchContent_Declare(
-    glew
-    GIT_REPOSITORY https://github.com/Perlmint/glew-cmake
-    GIT_TAG origin/master
-)
-FetchContent_MakeAvailable(glew)
+cpmaddpackage("gh:libsdl-org/SDL#release-2.32.8")
+cpmaddpackage("gh:Perlmint/glew-cmake#origin/master")
 
 add_executable(main main.cpp hello.cpp)
 target_include_directories(main PUBLIC ./)
