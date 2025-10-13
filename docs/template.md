@@ -47,14 +47,13 @@
     :: here "c:/_programs/cmake-4.0.1-windows-x86_64/bin" is the folder that contains "cmake" to use CMake in the workspace
     ```
 - set some terminal settings in the workspace settings (CTRL + P -> type ">Preference ...")
-    ```
+    ```json
     {
         "terminal.integrated.profiles.windows": {
             "Command Prompt: {
                 "path": ["cmd"],
                 "args": ["/K", "setup.bat"],
-                // here "setup.bat" is the name of the *.bat-file that defines the environment for the workspace
-                "icon": "terminal-cmd"
+                "icon": "terminal-cmd"
             }
         }
     }
