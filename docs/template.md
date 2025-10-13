@@ -101,10 +101,8 @@
                 "type": "cppdbg",
                 "request": "launch",
                 "program": "${workspaceFolder}/main.exe",
-                // here "${workspaceFolder}/main.exe" is the path to the file that should be started in the debug mode
                 "MIMode": "gdb",
                 "miDebuggerPath": "c:/_programs/mingw64/bin/gdb.exe",
-                // here "c:/_programs/mingw64/bin/gdb.exe" is the path to the debugger executor
                 "cwd": "${workspaceFolder}",
                 "setupCommands": [
                     {
