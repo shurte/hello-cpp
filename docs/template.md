@@ -19,7 +19,7 @@
     - UWP;
     - C++ Builder;
     - imGui;
-    - SFML;
+    - [SFML](#SFML);
     - SDL;
 - Online compilers
     - [Wandbox](https://wandbox.org/)
