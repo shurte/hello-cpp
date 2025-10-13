@@ -1,7 +1,12 @@
 # Template for a c++ project
 
-[Environment](#environment)
-[VS Code](#vs-code)
+ - [Environment](#environment)
+ - [VS Code](#vs-code)
+ - [Make](#make)
+ - [CMake](#cmake)
+ - [Pure C++](#pure-c++)
+
+[Home](readme.md)
 
 ## Environment
 - PATH variable (for example, in setup.bat):
@@ -425,5 +430,3 @@ int main() {
     	}
     }
     ```
-
-[Home](readme.md)
