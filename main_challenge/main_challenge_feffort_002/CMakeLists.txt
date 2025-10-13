@@ -2,15 +2,17 @@ cmake_minimum_required(VERSION 4.0)
 project(Hello)
 
 set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake")
-
 include(CPM)
-
 cpmaddpackage("gh:libsdl-org/SDL#release-2.32.8")
 cpmaddpackage("gh:Perlmint/glew-cmake#origin/master")
 
-add_executable(main main.cpp hello.cpp)
-target_include_directories(main PUBLIC ./)
-target_link_directories(main PUBLIC ./)
+add_subdirectory(hello)
+
+add_executable(main main.cpp)
+
+target_include_directories(main PUBLIC ${CMAKE_SOURCE_DIR}/hello/)
+target_link_libraries(main hello)
+
 target_link_libraries(main SDL2)
 target_link_libraries(main libglew_shared)
 target_link_libraries(main opengl32)
