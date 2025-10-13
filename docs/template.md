@@ -54,8 +54,8 @@
                 "path": ["cmd"],
                 "args": ["/K", "setup.bat"],
                 "icon": "terminal-cmd"
-            }
-        }
+            }
+        }
     }
     ```
 - create a simple `main.cpp` file
