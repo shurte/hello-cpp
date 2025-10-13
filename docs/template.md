@@ -23,12 +23,9 @@
     - MinGW - Minimalist GNU (GCC - GNU Compiler Collection) for Windows ?
         - [MinGW nuwen](https://nuwen.net/mingw.html)
 - GUI frameworks to check
-    - [wxWidget](development/cpp/wxwidgets.md);
-    - UWP;
-    - C++ Builder;
     - imGui;
     - [SFML](#SFML);
-    - SDL;
+    - [SDL](#SDL);
 - Online compilers
     - [Wandbox](https://wandbox.org/)
     - [Compiler Explorer](https://godbolt.org/)
