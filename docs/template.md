@@ -294,6 +294,9 @@ target_include_directories(StackLib PUBLIC "${PROJECT_SOURCE_DIR}/inc")
 target_link_libraries(stack_test StackLib)
 ```
 - After this you can use source code in tests;
+
+[Home](#template-for-a-c-project)
+
 ## Pure C++
 ##### To create a simple .cpp main file:
 ```cpp
