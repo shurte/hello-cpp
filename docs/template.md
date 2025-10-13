@@ -40,7 +40,7 @@
     ```json
     {
         "terminal.integrated.profiles.windows": {
-            "Command Prompt": {
+            "Command Prompt: {
                 "path": ["cmd"],
                 "args": ["/K", "setup.bat"],
                 // here "setup.bat" is the name of the *.bat-file that defines the environment for the workspace
