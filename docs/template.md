@@ -186,6 +186,8 @@
     }
     ```
 
+[Home](#template-for-a-c-project)
+
 ## Make
 - makefile
     ```make
@@ -204,6 +206,8 @@
     ```cmd
     make test clean all run
     ```
+
+[Home](#template-for-a-c-project)
 
 ## CMake
 #### To define a default CMakeLists.txt
@@ -301,6 +305,8 @@ int main() {
 }
 ```
 
+[Home](#template-for-a-c-project)
+
 ## SFML
 - SFML uses MSVCRT;
 - Use the MSVCRT version of [winlibs](https://winlibs.com/) (NOT UCRT);
@@ -337,6 +343,8 @@ int main() {
   return 0;
 }
 ```
+
+[Home](#template-for-a-c-project)
 
 ## SDL
 ### Option 1
@@ -432,3 +440,5 @@ int main() {
     	}
     }
     ```
+
+[Home](#template-for-a-c-project)
