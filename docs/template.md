@@ -34,7 +34,7 @@
     - [Compiler Explorer](https://godbolt.org/)
     - [Coliru](https://coliru.stacked-crooked.com/)
  
-[Home](#template-for-a-c++-project)
+[Home](#template)
 
 ## VS Code
 ### From scratch
