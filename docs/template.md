@@ -4,7 +4,7 @@
  - [VS Code](#vs-code)
  - [Make](#make)
  - [CMake](#cmake)
- - [Pure C++](#pure-c++)
+ - [Pure C++](#pure-c)
 
 [Home](readme.md)
 
