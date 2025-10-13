@@ -50,7 +50,7 @@
     ```json
     {
         "terminal.integrated.profiles.windows": {
-            "Command Prompt: {
+            "Command Prompt": {
                 "path": ["cmd"],
                 "args": ["/K", "setup.bat"],
                 "icon": "terminal-cmd"
