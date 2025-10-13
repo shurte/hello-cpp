@@ -133,7 +133,7 @@
     build\main.exe
     ```
 - start the application in the debug mode -> F5 (if you have correct defined the info about the debug mode in the `settings.json` file)
-#### Options in settings.json 
+### Options in settings.json 
 - to define the path to a compiler
     ```json
     {
@@ -207,48 +207,7 @@
 [Home](#template-for-a-c-project)
 
 ## CMake
-#### To define a default CMakeLists.txt
-```
-cmake_minimum_required(VERSION 3.22.0)
-project(Hello VERSION 1.0.0 LANGUAGES CXX)
-add_executable(main main.cpp)
-```
-#### To build:
-```cmd
-mkdir build
-cd build
-cmake -DCMAKE_BUILD_TYPE=Debug .. -G "MinGW Makefiles"
-cmake --build .
-main.exe
-```
-#### General workflow
-1. Be sure that cmake is installed on your workstation:
-```cmd
-cmake --version
-```
-2. Go to the folder with cmake project. This folder should contain file CMakeLists.txt.
-3. Create a folder where all of build files will be stored (for example 'build') (for Windows):
-```cmd
-mkdir build
-```
-4. Go to the folder:
-```cmd
-cd build
-```
-5. Run cmake command. This command creates a cmake build project according to the environment. In Windows and Linux build projects will look differently:
-```
-cmake ..
-```
-Two dots refer to the folder one level higher. In pur case this is the folder with cmake project.
-6. Run cmake --build command for the current cmake build project:
-```
-cmake --build .
-```
-7. Run application:
-```
-Debug\\main.exe
-```
-##### How create a simple CMake project
+### How create a simple CMake project
 - Set BOOST_ROOT environment variable as directory with actual boost repository.
 - Open the current project directory in VS Code.
 - Create file _CMakeLists.txt_ in the project directory.
@@ -260,7 +219,7 @@ Debug\\main.exe
 - Choose an active kit in VS Code (at the bottom of the IDE).
 - Choose a target to build in VS Code (for example, _stack_test_ at the bottom of the IDE).
 - Then you can build and run the unit tests.
-##### How to add header file to CMake project
+### How to add header file to CMake project
 - Add directory _inc_ to project directory;
 - Add the following to _CMakeLists.txt_ in directory _tests_:
 ```cmd
@@ -272,7 +231,7 @@ target_include_directories(stack_test PUBLIC "${PROJECT_SOURCE_DIR}/inc")
 #include "stack.h"
 ```
 - Now you can add code to header _stack.h_ and use it in _stack_test.cpp_;
-##### How to add source file to CMake project
+### How to add source file to CMake project
 - Add directory _src_ to the project directory;
 - Add file _CMakeLists.txt_ to the directory _src_;
 - Add the following to _CMakeLists.txt_ in the project directory:
@@ -295,7 +254,7 @@ target_link_libraries(stack_test StackLib)
 [Home](#template-for-a-c-project)
 
 ## Pure C++
-##### To create a simple .cpp main file:
+### To create a simple .cpp main file:
 ```cpp
 #include <iostream>
 
@@ -311,38 +270,38 @@ int main() {
 - SFML uses MSVCRT;
 - Use the MSVCRT version of [winlibs](https://winlibs.com/) (NOT UCRT);
 - Compiling:
-```cmd
-set PATH=%PATH%;c:\_programs\mingw64\bin\
-g++ -Ilibs/sfml/include -o main main.cpp -Llibs/sfml/lib -lsfml-graphics -lsfml-system -lsfml-window
-```
+	```cmd
+	set PATH=%PATH%;c:\_programs\mingw64\bin\
+	g++ -Ilibs/sfml/include -o main main.cpp -Llibs/sfml/lib -lsfml-graphics -lsfml-system -lsfml-window
+	```
 - Hello World:
-```cpp
-#include <SFML\Graphics.hpp>
-#include <cassert>
-int main() {
-  sf::RenderWindow sfmlWin(sf::VideoMode(600, 360), "Hello World SFML Window");
-  sf::Font font;
-  //You need to pass the font file location
-  if (!font.loadFromFile("myfont.ttf")) {
-    return -1;
-  }
-  sf::Text message("Hello, World !", font);
-  while (sfmlWin.isOpen()) {
-    sf::Event e;
-    while (sfmlWin.pollEvent(e)) {
-      switch (e.type) {
-        case sf::Event::EventType::Closed:
-          sfmlWin.close();
-          break;
-        }
-      }
-      sfmlWin.clear();
-      sfmlWin.draw(message);
-      sfmlWin.display();
-  }
-  return 0;
-}
-```
+	```cpp
+	#include <SFML\Graphics.hpp>
+	#include <cassert>
+	int main() {
+	  sf::RenderWindow sfmlWin(sf::VideoMode(600, 360), "Hello World SFML Window");
+	  sf::Font font;
+	  //You need to pass the font file location
+	  if (!font.loadFromFile("myfont.ttf")) {
+	    return -1;
+	  }
+	  sf::Text message("Hello, World !", font);
+	  while (sfmlWin.isOpen()) {
+	    sf::Event e;
+	    while (sfmlWin.pollEvent(e)) {
+	      switch (e.type) {
+	        case sf::Event::EventType::Closed:
+	          sfmlWin.close();
+	          break;
+	        }
+	      }
+	      sfmlWin.clear();
+	      sfmlWin.draw(message);
+	      sfmlWin.display();
+	  }
+	  return 0;
+	}
+	```
 
 [Home](#template-for-a-c-project)
 
