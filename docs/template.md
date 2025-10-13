@@ -1,7 +1,7 @@
 # Template for a c++ project
 
-[Environment](#Environment)
-[VS Code](#VS Code)
+[Environment](#environment)
+[VS Code](#vs-code)
 
 ## Environment
 - PATH variable (for example, in setup.bat):
