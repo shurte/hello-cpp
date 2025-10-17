@@ -11,6 +11,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: prepare
       run: |
+        dir
         cd main_challenge/main_challenge_feffort_002
     - name: configure
       run: |
