@@ -13,9 +13,5 @@ jobs:
       run: |
         dir
         cd main_challenge/main_challenge_feffort_002
-    - name: configure
-      run: |
         cmake -S . -B build
-    - name: build
-      run: |
         cmake --build build
