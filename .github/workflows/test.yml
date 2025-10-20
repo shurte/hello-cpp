@@ -1,0 +1,17 @@
+name: Main Challenge Test
+
+on:
+  push:
+    branches: [ blabla ]
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: prepare
+      run: |
+        dir
+        cd main_challenge/main_challenge_feffort_002
+        cmake -S . -B build
+        cmake --build build
