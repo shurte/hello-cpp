@@ -18,18 +18,24 @@ target_link_libraries(main SDL2)
 target_link_libraries(main libglew_shared)
 target_link_libraries(main opengl32)
 
+set(DEBUG_SUFFIX "")
+if ("${CMAKE_BUILD_TYPE}" STREQUAL "Debug")
+    set(DEBUG_SUFFIX "d")
+endif()
+message("Debug postfix: ${DEBUG_SUFFIX}")
+
 add_custom_command(
     TARGET main POST_BUILD
-    COMMAND ${CMAKE_COMMAND} -E copy "${SDL2_BINARY_DIR}/SDL2.dll" "${CMAKE_BINARY_DIR}/SDL2.dll"
+    COMMAND ${CMAKE_COMMAND} -E copy "${SDL2_BINARY_DIR}/SDL2${DEBUG_SUFFIX}.dll" "${CMAKE_BINARY_DIR}/SDL2${DEBUG_SUFFIX}.dll"
 )
 
 add_custom_command(
     TARGET main POST_BUILD
-    COMMAND ${CMAKE_COMMAND} -E copy "${glew_BINARY_DIR}/bin/libglew-shared.dll" "${CMAKE_BINARY_DIR}/libglew-shared.dll"
+    COMMAND ${CMAKE_COMMAND} -E copy "${glew_BINARY_DIR}/bin/libglew-shared${DEBUG_SUFFIX}.dll" "${CMAKE_BINARY_DIR}/libglew-shared${DEBUG_SUFFIX}.dll"
 )
 
 add_executable(test test.cpp)
+
 target_include_directories(test PUBLIC ${CMAKE_SOURCE_DIR}/hello/)
 target_link_libraries(test hello)
-
 target_link_libraries(test Catch2WithMain)
