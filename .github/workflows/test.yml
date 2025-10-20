@@ -2,7 +2,7 @@ name: Main Challenge Test
 
 on:
   push:
-    branches: [ blabla ]
+    branches: [ main_challenge ]
 
 jobs:
   build:
