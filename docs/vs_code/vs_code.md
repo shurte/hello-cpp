@@ -3,7 +3,7 @@
 - [From scratch](#from-scratch)
 - [Options in settings.json](#options-in-settingsjson)
 
-[Home](readme.md)
+[Home](shurte.github.io/hello-cpp)
 
 ## From scratch
 - open a new folder as a new workspace
