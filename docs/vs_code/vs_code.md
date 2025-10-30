@@ -1,7 +1,7 @@
 # VS Code
 
 - [From scratch](#from-scratch)
-- [Options in settings.json](#options-in-settings-json)
+- [Options in settings.json](#options-in-settingsjson)
 
 ## From scratch
 - open a new folder as a new workspace
