@@ -1,13 +1,13 @@
 # VS Code
 
 - [From scratch](#from-scratch)
-- [Options in settings.json](#options-in-settingsjson)
+- [Options in _settings.json_](#options-in-settingsjson)
 
 [Home](../readme.md)
 
 ## From scratch
 - open a new folder as a new workspace
-- create a `setup.bat` file to set the environment
+- create a _setup.bat_ file to set the environment
     ```cmd
     set PATH=%PATH%;c:/_programs/mingw64/bin
     :: here "c:/_programs/mingw64/bin" is the folder that contains "g++.exe" to compile c++ files
@@ -26,7 +26,7 @@
         }
     }
     ```
-- create a simple `main.cpp` file
+- create a simple _main.cpp_ file
     ```cpp
     #include <iostream>
     int main() {
@@ -34,14 +34,14 @@
         return 0;
     }
     ```
-- compile the `main.cpp` file and start the `main.exe` file from the terminal
+- compile the _main.cpp_ file and start the _main.exe_ file from the terminal
     ```cmd
     g++ -g main.cpp -o main.exe
     :: "-g" is the option for gebugging
     main.exe
     :: Output : "Hello"
     ```
-- create a simple `CMakeLists.txt` file
+- create a simple _CMakeLists.txt_ file
     ```cmake
     cmake_minimum_required(VERSION 4.0)
     project(Hello)
@@ -55,7 +55,7 @@
     :: here '-G "MinGW Makefiles"' is the option that defines the sub-build system that will be used by CMake to build the project
     :: here '-DCMAKE_BUILD_TYPE=Debug' is the option that defines building in the debug mode (not release)
     ```
-- add to the `settings.json` info about starting the application in the debug mode
+- add to the _settings.json_ info about starting the application in the debug mode
     ```json
     "launch": {
         "version": "0.2.0",
@@ -97,7 +97,10 @@
     build\main.exe
     ```
 - start the application in the debug mode -> F5 (if you have correct defined the info about the debug mode in the `settings.json` file)
-## Options in settings.json 
+
+[Back](#vs-code)
+
+## Options in _settings.json_ 
 - to define the path to a compiler
     ```json
     {
@@ -146,3 +149,5 @@
         "compounds": []
     }
     ```
+
+[Back](#vs-code)
