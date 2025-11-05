@@ -98,7 +98,7 @@
     ```
 - start the application in the debug mode -> F5 (if you have correct defined the info about the debug mode in the `settings.json` file)
 
-[Home](#vs-code)
+[Back](#vs-code)
 
 ## Options in _settings.json_ 
 - to define the path to a compiler
@@ -150,4 +150,4 @@
     }
     ```
 
-[Home](#vs-code)
+[Back](#vs-code)
