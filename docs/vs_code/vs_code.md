@@ -97,6 +97,9 @@
     build\main.exe
     ```
 - start the application in the debug mode -> F5 (if you have correct defined the info about the debug mode in the `settings.json` file)
+
+[Home](#vs-code)
+
 ## Options in _settings.json_ 
 - to define the path to a compiler
     ```json
@@ -146,3 +149,5 @@
         "compounds": []
     }
     ```
+
+[Home](#vs-code)
