@@ -8,23 +8,43 @@
 [Home](readme.md)
 
 ## Environment
+### Windows
+- Compiler (g++, gcc etc.):
+  - The best option is MinGW (if not Microsoft). Generally [here](https://www.mingw-w64.org/); 	
+  - The best download option is [Winlibs](https://winlibs.com/). Look for UCRT with LLVM/CLang etc. if you need it;
+- Make:
+  - [Download](https://gnuwin32.sourceforge.net/packages/make.htm);
+- CMake:
+  - CMake can be install with MinGW or separately. [Download](https://cmake.org/download/);
 - PATH variable (for example, in setup.bat):
     ```cmd
-    set PATH=%PATH%;c:/_programs/msys64/ucrt64/bin
+    set PATH=%PATH%;c:/_programs/mingw64/bin
+    set PATH=%PATH%;c:/_programs/make/bin
     set PATH=%PATH%;c:/_programs/cmake-4.0.1-windows-x86_64/bin
     ```
 - Commands to check
     ```cmd
     cmake --version
+    make --version
     g++ --version
     ```
-- Compiler
-    - MinGW - Minimalist GNU (GCC - GNU Compiler Collection) for Windows ?
-        - [MinGW nuwen](https://nuwen.net/mingw.html)
+### Linux
+- sudo apt-get install gcc
+- sudo apt-get install g++
+- sudo apt-get install gdb
+- sudo apt-get install make
+- sudo apt-get install cmake
+- sudo apt-get install git
+- sudo apt-get install doxygen
+- for code coverage needed installations:
+  - sudo apt-get install gcovr
+  - sudo apt-get install lcov
+### Libraries and frameworks
 - GUI frameworks to check
     - imGui;
     - [SFML](#SFML);
     - [SDL](#SDL);
+### Online
 - Online compilers
     - [Wandbox](https://wandbox.org/)
     - [Compiler Explorer](https://godbolt.org/)
@@ -50,6 +70,37 @@
     ```cmd
     make test clean all run
     ```
+## Cpp makefile tutorial
+### GCC/Clang compiler steps:
+#### Compilation steps:
+1. Preprocessing
+2. Compilation
+3. Assembler
+4. Linking
+#### Preprocessing:
+ - Removes comments from source code;
+ - Macro expansion;
+ - Expansion of header files;
+ - Command: g++ -E main.cpp > main.i;
+#### Compilation:
+ - Translates the preprocessing file into assembly language;
+ - Checks the C/C++ language syntax for error;
+ - Command: g++ -S main.i;
+ - Produces: main.s;
+#### Assembler:
+ - Translates the assembly code into low level machine code;
+ - Command: g++ -c main.s;
+ - Produces: main.o;
+#### Linker:
+ - Linking all the source files together, that is all the other object codes in project;
+ - Generates the executable file;
+ - Command: g++ main.o -o main;
+ - Produces: main (.exe for Windows);
+#### Compiler flags:
+ - Debug: -g;
+ - Release: -O0 -O1 -O2 -O3 -Og
+ - Includes: -I
+ - Warnings: -Wall -Wextra -Wpedantic -Wconversion
 
 [Home](#template-for-a-c-project)
 
