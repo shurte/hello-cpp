@@ -151,3 +151,139 @@
     ```
 
 [Back](#vs-code)
+
+### Properties
+Properties for C++ (`/.vscode/c_cpp_properties.json`) :
+```json
+  {
+    "env": {
+      "myIncludePath": ["${workspaceFolder}/include", "${workspaceFolder}/src"],
+      "myDefines": ["DEBUG", "MY_FEATURE=1"]
+    },
+    "configurations": [
+      {
+        "name": "Win32",
+        "compilerPath": "c:/_programs/MinGW/bin/g++.exe",
+        "intelliSenseMode": "gcc-x64",
+        "includePath": ["${myIncludePath}", "c:/_programs/MinGW/include"],
+        "defines": ["${myDefines}", "_WINDOWS"],
+        "cStandard": "c17",
+        "cppStandard": "c++20",
+        "windowsSdkVersion": "10.0.19041.0",
+        "browse": {
+          "path": ["${myIncludePath}", "${workspaceFolder}"]
+        }
+      }
+    ],
+    "version": 4,
+    "enableConfigurationSquiggles": true
+  }
+```
+
+
+### Options
+Options for VS Code (`/.vscode/settings.json`) :
+```json
+{
+    "explorer.confirmDragAndDrop": false,
+    "explorer.confirmDelete": false,
+    "files.autoSave": "onFocusChange",
+    "terminal.integrated.profiles.windows": {
+        "terminal": {
+            "path": "${env:windir}/System32/cmd.exe",
+            "args": [
+                "/k",
+                "c:/_programs/MinGW/set_distro_paths.bat"
+            ]
+        }
+    },
+    "terminal.integrated.defaultProfile.windows": "terminal"
+}
+```
+
+### Tasks
+
+Configuration for building (`/.vscode/tasks.json`):  
+```json
+{
+    "tasks": [
+        {
+            "type": "cppbuild",
+            "label": "build",
+            "command": "D:\\programms\\mingw64\\bin\\g++.exe",
+            "args": [
+                "-O0",
+                "-g",
+                "-std=c++20",
+                "${file}",
+                "-o",
+                "${fileDirname}/build/${fileBasenameNoExtension}.exe"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "g++: build active file."
+        }
+    ],
+    "version": "2.0.0"
+}
+```
+Using:
+- Open a *.cpp file to compile.  
+- Press `Ctrl + Shift + P` to call the console.  
+- Type `tasks build` to run the task.  
+
+### Debug
+
+Launch a *.cpp file in debug mode (`/.vscode/launch.json`)(depends on the task `build`):  
+```json
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Run the active *.cpp file",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${fileDirname}/build/${fileBasenameNoExtension}.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "preLaunchTask": "build",
+            "miDebuggerPath": "c:/_programs/MinGW/bin/gdb.exe"
+        }
+    ]
+}
+```
+Using:
+- Open a *.cpp file to compile.  
+- Press `Ctrl + Shift + P` to call the console.  
+- Type `debug` and chose a debug task.  
+
+### Keybindings
+- Default:
+  - Ctrl+K -> Ctrl+O : Open Folder;
+  - Ctrl+K -> Ctrl+S : Keyboard Shortcuts;
+  - Ctrl+K -> V : Open Preview on Side;
+  - Ctrl+Shift+V : Open Preview;
+- Customized:
+  - Ctrl+F -> Ctrl+T : Focus Terminal;
+
+### Plug-ins
+- Plug-ins for VS Code: 
+  - C/C++, 
+  - Test Explorer UI, 
+  - C++ TestMate, 
+  - CMake, 
+  - CMake Tools, 
+  - Doxygen Documentation Generator.
+ 
+[Back](#vs-code)
