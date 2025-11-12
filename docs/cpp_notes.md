@@ -167,3 +167,13 @@ int randomValue = randomDistribution(generator);
 ```cpp
 swap(x, y);
 ```
+
+### Links
+
+- [C++ Standard](https://isocpp.org/)  
+- [C++ Reference](https://en.cppreference.com/w/)  
+- [C++ reddit](https://www.reddit.com/r/cpp/)  
+- [Leanpub](https://leanpub.com/)  
+- [C++ Draft Standard](https://eel.is/c++draft/)  
+- [Compiler Explorer](https://compiler-explorer.com/)  
+- [C++ Insights](https://cppinsights.io/)  
